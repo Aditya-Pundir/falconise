@@ -53,6 +53,7 @@ function App() {
       <header>
         <img
           src="LOGO.png"
+          alt=""
           style={{ height: "3rem", width: "3rem" }}
           onClick={scrollToHero}
         />
