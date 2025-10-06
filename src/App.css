@@ -29,7 +29,7 @@ header {
 header h1 {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #ff6600, #fff);
+  background: #ff6600;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
@@ -125,13 +125,20 @@ nav a:hover {
     rgba(255, 102, 0, 0.15),
     transparent 60%
   );
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 102, 0, 0.25),
+    transparent 60%
+  );
+  background-size: 200% 200%;
+  animation: moveGlow 6s ease-in-out infinite alternate;
   padding: 0 20px;
 }
 
 .hero h2 {
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 800;
-  background: linear-gradient(90deg, #ff6600, #fff);
+  background: #ff6600;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -219,5 +226,18 @@ footer {
 
   .menu-toggle {
     display: flex;
+  }
+}
+
+/* Animate the radial gradient position */
+@keyframes moveGlow {
+  0% {
+    background-position: 40% 30%;
+  }
+  50% {
+    background-position: 60% 70%;
+  }
+  100% {
+    background-position: 30% 60%;
   }
 }
