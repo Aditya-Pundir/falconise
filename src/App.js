@@ -90,8 +90,8 @@ function App() {
       <section className="hero" id="hero">
         <h2>Leading the Future with AI Agents</h2>
         <p>
-          At Falconise, we don’t just build AI agents—we engineer intelligent
-          ecosystems. Scalable, powerful, and future-proof.
+          At Falconise, we create AI employees — 10,000% more efficient than
+          humans.
         </p>
         <a href="#contact" className="btn">
           Book a Demo →
