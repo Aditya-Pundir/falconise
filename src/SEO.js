@@ -13,7 +13,7 @@ export default function SEO() {
           "@type": "Organization",
           "name": "Falconise",
           "url": "https://falconise.com",
-          "logo": "https://falconise.com/logo.png",
+          "logo": "https://falconise.com/LOGO.png",
           "sameAs": [
             "https://linkedin.com/company/falconise",
             "https://twitter.com/falconise",
