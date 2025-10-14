@@ -52,7 +52,7 @@ function App() {
       <SEO />
       <header>
         <img
-          src="favicon.webp"
+          src="LOGO.png"
           alt=""
           style={{ height: "3rem", width: "3rem" }}
           onClick={scrollToHero}
