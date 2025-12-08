@@ -172,7 +172,7 @@
 
 // export default App;
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import "./App.css";
 
 function App() {
@@ -182,8 +182,12 @@ function App() {
     testimonialsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  /* Typing Animation */
-  const words = ["Scale Faster.", "Automate Smarter.", "Grow Predictably."];
+  // Memoized words array to prevent exhaustive-deps lint warning
+  const words = useMemo(
+    () => ["Scale Faster.", "Automate Smarter.", "Grow Predictably."],
+    []
+  );
+
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
