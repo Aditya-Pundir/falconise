@@ -26,11 +26,23 @@ html {
 
 /* NAV */
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   padding: var(--space-sm) var(--space-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
+
 .logo {
   font-size: 28px;
   font-weight: 700;
@@ -44,6 +56,32 @@ html {
   text-decoration: none;
 }
 
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 4rem; /* bigger */
+  height: 4rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.15));
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.primary {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
 /* HERO */
 .hero {
   height: 95vh;
@@ -54,6 +92,7 @@ html {
   justify-content: center;
   overflow: hidden;
   margin-bottom: var(--space-xl);
+  margin-top: 3rem;
 }
 .hero-bg {
   position: absolute;
@@ -295,5 +334,202 @@ html {
   }
   .section {
     padding: var(--space-lg) var(--space-sm);
+  }
+}
+
+/* NEW HORIZONTAL HERO LAYOUT */
+.hero-split {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  z-index: 10;
+}
+
+.hero-left {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* === MIXED VISUAL WRAPPER === */
+.hero-visual-mixed {
+  width: 100%;
+  height: 310px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === GLASS COMPLAINT CARDS === */
+.visual-card {
+  position: absolute;
+  width: 58%;
+  padding: 20px 22px;
+  border-radius: 16px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 450;
+  letter-spacing: 0.1px;
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+  animation: floatCard 7s infinite ease-in-out;
+  z-index: 5;
+  font-style: italic; /* makes it feel like spoken complaints */
+}
+
+/* Positions (kept natural, small adjustments) */
+.visual-card.one {
+  top: 8%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.visual-card.two {
+  top: 42%;
+  left: 25%;
+  animation-delay: 1.6s;
+}
+.visual-card.three {
+  top: 68%;
+  left: 6%;
+  animation-delay: 3.2s;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* === GRAPH BOXES === */
+.graph-box {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  width: 42%;
+  height: 110px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* === LINE GRAPH === */
+.graph-line {
+  position: absolute;
+  left: -200px;
+  top: 50%;
+  width: 400px;
+  height: 2px;
+  background: var(--accent);
+  animation: lineMove 6s linear infinite;
+}
+
+@keyframes lineMove {
+  0% {
+    transform: translateX(0) translateY(-10px) rotate(1deg);
+  }
+  25% {
+    transform: translateX(40px) translateY(15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(80px) translateY(-8px) rotate(3deg);
+  }
+  75% {
+    transform: translateX(120px) translateY(12px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) translateY(-10px) rotate(1deg);
+  }
+}
+
+/* === BAR GRAPH === */
+.graph-box.bars {
+  bottom: 8%;
+}
+
+.bar {
+  bottom: 0;
+  width: 18%;
+  background: var(--accent);
+  border-radius: 6px 6px 0 0;
+  animation: barMove 2.8s ease-in-out infinite;
+  opacity: 0.9;
+  margin-left: 8%;
+  display: inline-block;
+}
+
+.b1 {
+  height: 40px;
+  animation-delay: 0s;
+}
+.b2 {
+  height: 60px;
+  animation-delay: 0.4s;
+}
+.b3 {
+  height: 30px;
+  animation-delay: 0.8s;
+}
+.b4 {
+  height: 70px;
+  animation-delay: 1.2s;
+}
+
+@keyframes barMove {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.35);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Vertical metrics on right */
+.hero-metrics-col {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  text-align: center;
+}
+
+.hero-metrics-col .metric h2 {
+  font-size: 36px;
+}
+
+@media (max-width: 1024px) {
+  .hero-split {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .hero-left {
+    text-align: center;
   }
 }

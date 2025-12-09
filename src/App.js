@@ -8,11 +8,20 @@ function App() {
     testimonialsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Memoized words array to prevent exhaustive-deps lint warning
   const words = useMemo(
     () => ["Scale Faster.", "Automate Smarter.", "Grow Predictably."],
     []
   );
+
+  const [hideName, setHideName] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHideName(window.scrollY > 60);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -42,56 +51,92 @@ function App() {
 
   return (
     <div className="App">
-      {/* NAV */}
       <nav className="nav">
-        <div className="logo">Falconise</div>
+        <div className="logo-wrap">
+          <img src="LOGO-white.png" alt="Falconise Logo" className="nav-logo" />
+          <div className={`logo-text ${hideName ? "hide-name" : ""}`}>
+            Falconise
+          </div>
+        </div>
+
         <a href="mailto:adityapundir2k@gmail.com" className="nav-demo">
           Book a Demo
         </a>
       </nav>
 
-      {/* HERO */}
       <section className="hero">
         <div className="hero-bg"></div>
-        <div className="hero-inner">
-          <h1 className="hero-title">
-            AI Systems That <br />
-            <span className="typed">
-              {words[index].substring(0, subIndex)}
-              <span className="cursor">|</span>
-            </span>
-          </h1>
-          <p className="hero-sub">
-            Falconise builds fully autonomous AI agents that replace manual
-            workflows, increase revenue, and help businesses grow faster without
-            hiring more people.
-          </p>
-          <div className="hero-buttons">
-            <button className="primary" onClick={scrollToTestimonials}>
-              See Proof
-            </button>
-            <a href="mailto:adityapundir2k@gmail.com" className="secondary">
-              Book a Demo
-            </a>
+
+        <div className="hero-split">
+          {/* LEFT SIDE — CONTENT */}
+          <div className="hero-left">
+            <h1 className="hero-title">
+              AI Systems That <br />
+              <span className="typed">
+                {words[index].substring(0, subIndex)}
+                <span className="cursor">|</span>
+              </span>
+            </h1>
+
+            <p className="hero-sub">
+              Falconise builds fully autonomous AI agents that replace manual
+              workflows, increase revenue, and help businesses grow faster
+              without hiring more people.
+            </p>
+
+            <div className="hero-buttons">
+              <button className="primary" onClick={scrollToTestimonials}>
+                See Proof
+              </button>
+              <a href="mailto:adityapundir2k@gmail.com" className="secondary">
+                Book a Demo
+              </a>
+            </div>
           </div>
-          <div className="hero-metrics">
-            <div className="metric">
-              <h2>3.2x</h2>
-              <p>Avg Revenue Lift</p>
+
+          {/* RIGHT SIDE — VISUALS + METRICS */}
+          <div className="hero-right">
+            <div className="hero-visual hero-visual-mixed">
+              <div className="visual-card one">
+                “Leads slip through because I can’t reply fast.”
+              </div>
+              <div className="visual-card two">
+                “My whole day goes in doing the same tasks.”
+              </div>
+              <div className="visual-card three">
+                “I lose sales simply because no one followed up.”
+              </div>
+
+              <div className="graph-box">
+                <div className="graph-line"></div>
+              </div>
+
+              <div className="graph-box bars">
+                <div className="bar b1"></div>
+                <div className="bar b2"></div>
+                <div className="bar b3"></div>
+                <div className="bar b4"></div>
+              </div>
             </div>
-            <div className="metric">
-              <h2>72%</h2>
-              <p>Ops Automated</p>
-            </div>
-            <div className="metric">
-              <h2>94%</h2>
-              <p>Lead Response Automated</p>
+
+            <div className="hero-metrics hero-metrics-col">
+              <div className="metric">
+                <h2>3.2x</h2>
+                <p>Avg Revenue Lift</p>
+              </div>
+              <div className="metric">
+                <h2>72%</h2>
+                <p>Ops Automated</p>
+              </div>
+              <div className="metric">
+                <h2>94%</h2>
+                <p>Lead Response Automated</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* VALUE SECTION */}
       <section className="section">
         <h2 className="section-title">What We Build</h2>
         <p className="lead">
@@ -125,7 +170,6 @@ function App() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
       <section className="section" ref={testimonialsRef}>
         <h2 className="section-title">What Our Clients Say</h2>
         <div className="testimonials-wrapper">
@@ -175,7 +219,6 @@ function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="footer">
         <p>Build Your AI Advantage</p>
         <p>Contact: adityapundir2k@gmail.com</p>
