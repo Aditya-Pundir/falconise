@@ -229,12 +229,12 @@ function Hero({ onSeeProof }) {
             <div className="hero-visual__stats">
               <div className="mini-stat">
                 <span className="mini-stat__label">Lead reply time</span>
-                <span className="mini-stat__value">5s → 5m</span>
+                <span className="mini-stat__value">12m → 30s</span>
                 <div className="mini-stat__bar mini-stat__bar--blue" />
               </div>
               <div className="mini-stat">
                 <span className="mini-stat__label">Manual workload</span>
-                <span className="mini-stat__value">-72%</span>
+                <span className="mini-stat__value">–72%</span>
                 <div className="mini-stat__bar mini-stat__bar--purple" />
               </div>
             </div>
@@ -426,10 +426,10 @@ function Process() {
 // ===== Results =====
 function Results() {
   const stats = [
-    { label: "Average revenue lift", value: "3.2x" },
-    { label: "Operations automated", value: "72%" },
-    { label: "Lead response automated", value: "94%" },
-    { label: "Hours saved per week", value: "20+" },
+    { label: "Lead response automated", value: "98%" },
+    { label: "Reply time improvement", value: "14m → 20s" },
+    { label: "Pipeline engagement boost", value: "2.6×" },
+    { label: "Manual workload reduced", value: "65%" },
   ];
 
   return (
