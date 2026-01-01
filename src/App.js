@@ -65,7 +65,7 @@ function Nav({ onBook }) {
       <div className="nav__shell">
         <div className="container nav__inner">
           <a href="/" className="brand">
-            <img className="brand__mark" src="LOGO.png" alt="Falconise"></img>
+            <img className="brand__mark" src="LOGO.png" alt="Falconise AI Agent Builder" width="40" height="40"></img>
             <div className="brand__text">
               <strong>Falconise</strong>
               {/* <span className="muted">AI Automation Agency</span> */}
@@ -223,9 +223,9 @@ function Hero({ onSeeProof }) {
 
           <div className="hero__social-proof">
             <div className="avatars">
-              <img src="https://thispersondoesnotexist.com/?i=1" alt="User" />
-              <img src="https://thispersondoesnotexist.com/?i=2" alt="User" />
-              <img src="https://thispersondoesnotexist.com/?i=3" alt="User" />
+              <img src="https://thispersondoesnotexist.com/?i=1" alt="Falconise Happy Client" width="32" height="32" />
+              <img src="https://thispersondoesnotexist.com/?i=2" alt="Falconise Happy Client" width="32" height="32" />
+              <img src="https://thispersondoesnotexist.com/?i=3" alt="Falconise Happy Client" width="32" height="32" />
             </div>
             <div className="rating">
               <div className="stars">

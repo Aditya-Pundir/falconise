@@ -1,47 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/LOGO-white.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.webp" />
-  <!--
+<meta charset="utf-8" />
+<link rel="icon" href="%PUBLIC_URL%/LOGO-white.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.webp" />
+<!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Falconise | #1 AI Agent Builder & Automation Experts</title>
-  <meta name="description"
-    content="Falconise is the industry leader in AI Agents and AI Agent Builder solutions. Build intelligent, scalable AI agents for automation, customer engagement, and enterprise growth." />
-  <meta name="keywords"
-    content="AI Agents, AI Agent Builder, Build AI Agents, Intelligent Automation, AI Automation, AI Agents for Business, AI Customer Service, AI Software Company, AI Automation Experts" />
-  <meta name="author" content="Falconise" />
+<!-- Canonical URL -->
+<link rel="canonical" href="https://falconise.com/" />
 
-  <!-- Open Graph / Facebook  -->
-  <meta property="og:title" content="Falconise | #1 AI Agent Builder & Automation Experts" />
-  <meta property="og:description"
-    content="Industry-leading AI agent builder. Falconise creates intelligent, scalable AI agents for businesses worldwide." />
-  <meta property="og:url" content="https://falconise.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://falconise.com/og-image.jpg" />
+<!-- Robots -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Falconise | AI Agent Builder & Automation Experts" />
-  <meta name="twitter:description"
-    content="We design AI agents that transform industries. Scalable, intelligent, future-ready." />
-  <meta name="twitter:image" content="https://falconise.com/og-image.jpg" />
+<!-- Primary Meta Tags -->
+<title>Falconise | #1 AI Agent Builder & Automation Experts</title>
+<meta name="title" content="Falconise | #1 AI Agent Builder & Automation Experts" />
+<meta name="description"
+  content="Falconise is the premium AI Agent Builder for enterprise growth. We build intelligent, scalable AI agents that automate customer service, sales, and workflows." />
+<meta name="keywords"
+  content="AI Agents, AI Agent Builder, Build AI Agents, Intelligent Automation, AI Automation, AI Agents for Business, AI Customer Service, AI Software Company, AI Automation Experts, Falconise, Business Automation, Enterprise AI" />
+<meta name="author" content="Falconise" />
+<meta name="geo.region" content="US" />
+<meta name="geo.position" content="37.0902; -95.7129" />
+<meta name="ICBM" content="37.0902, -95.7129" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://falconise.com/" />
+<meta property="og:title" content="Falconise | #1 AI Agent Builder & Automation Experts" />
+<meta property="og:description"
+  content="Industry-leading AI agent builder. Falconise creates intelligent, scalable AI agents that transform businesses. Automate your growth today." />
+<meta property="og:image" content="https://falconise.com/og-image.jpg" />
+<meta property="og:site_name" content="Falconise" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://falconise.com/" />
+<meta property="twitter:title" content="Falconise | AI Agent Builder & Automation Experts" />
+<meta property="twitter:description"
+  content="We design AI agents that transform industries. Scalable, intelligent, future-ready automation for your business." />
+<meta property="twitter:image" content="https://falconise.com/og-image.jpg" />
+<meta name="twitter:creator" content="@falconise" />
+
+<!-- Structured Data JSON-LD -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Falconise",
+          "url": "https://falconise.com",
+          "logo": "https://falconise.com/LOGO.png",
+          "sameAs": [
+            "https://twitter.com/falconise",
+            "https://www.linkedin.com/company/falconise",
+            "https://www.instagram.com/falconise"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-555-5555",
+            "contactType": "customer service",
+            "areaServed": ["US", "GB", "CA"],
+            "availableLanguage": "en"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "Falconise",
+          "url": "https://falconise.com",
+          "possibleAction": {
+            "@type": "SearchAction",
+            "target": "https://falconise.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "AI Agent Development",
+          "provider": {
+            "@type": "Organization",
+            "name": "Falconise"
+          },
+          "serviceType": "Artificial Intelligence Automation",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Worldwide"
+          },
+          "description": "Custom AI Agent creation for sales, support, and workflow automation."
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
